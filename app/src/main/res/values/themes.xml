@@ -3,6 +3,18 @@
     <style name="Base.Theme.QuizApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/blue</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/blue</item>
+        <item name="colorSecondaryVariant">@color/blue</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/blue</item>
+        <item name="android:windowLightStatusBar">true</item> <!-- Set the status bar text to dark (black) -->
+        <item name="windowActionBar">true</item>
+
     </style>
 
     <style name="Theme.QuizApp" parent="Base.Theme.QuizApp" />

@@ -36,39 +36,53 @@ class ResultActivity : AppCompatActivity() {
 
     // Set Result Data
     private fun setResultMessage(score: Int, correctAnswers: Int){
-        // Set the total score text
-        binding.tvTotalScore.text = "Total Score: $score"
 
         // Determine the result message and color based on correct answers
         val resultMessage = when (correctAnswers) {
             10 -> {
+                binding.image.setImageResource(R.drawable.icon_winner)
                 binding.tvResultMessage.setTextColor(ContextCompat.getColor(this, R.color.green))
+                binding.tvTotalScore.setTextColor(ContextCompat.getColor(this, R.color.green))
                 "Awesome. You are Genius. Congratulations you won the Game."
             }
             9 -> {
+                binding.image.setImageResource(R.drawable.icon_winner)
                 binding.tvResultMessage.setTextColor(ContextCompat.getColor(this, R.color.green))
+                binding.tvTotalScore.setTextColor(ContextCompat.getColor(this, R.color.green))
                 "You Won! Congratulations and Well Done."
             }
             7, 8 -> {
+                binding.image.setImageResource(R.drawable.icon_winner)
                 binding.tvResultMessage.setTextColor(ContextCompat.getColor(this, R.color.green))
+                binding.tvTotalScore.setTextColor(ContextCompat.getColor(this, R.color.green))
                 "You Won! Congratulations."
             }
             5, 6 -> {
+                binding.image.setImageResource(R.drawable.icon_winner)
                 binding.tvResultMessage.setTextColor(ContextCompat.getColor(this, R.color.green))
+                binding.tvTotalScore.setTextColor(ContextCompat.getColor(this, R.color.green))
                 "You Won!"
             }
             3, 4 -> {
+                binding.image.setImageResource(R.drawable.icon_better_luck_next_time)
                 binding.tvResultMessage.setTextColor(ContextCompat.getColor(this, R.color.red))
+                binding.tvTotalScore.setTextColor(ContextCompat.getColor(this, R.color.red))
                 "Well played but you failed. All The Best for Next Game."
             }
             else -> {
+                binding.image.setImageResource(R.drawable.try_again)
                 binding.tvResultMessage.setTextColor(ContextCompat.getColor(this, R.color.red))
+                binding.tvTotalScore.setTextColor(ContextCompat.getColor(this, R.color.red))
                 "Sorry, You failed."
             }
         }
 
         // Set the result message text
         binding.tvResultMessage.text = resultMessage
+
+        // Set the total score text
+        binding.tvTotalScore.text = "Total Score: $score"
+
     }
 
     // Set up the play again button
