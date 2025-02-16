@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QuizApp</string>
+    <string name="app_name">QUIZie</string>
     <string name="play_game">Play Game</string>
     <string name="score">Score: 0</string>
     <string name="question">Question: 1</string>

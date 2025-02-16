@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.quizapp'
+    namespace 'com.vaibhavjoshi.quizapp'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.quizapp"
+        applicationId "com.vaibhavjoshi.quizapp"
         minSdk 28
         targetSdk 34
         versionCode 1

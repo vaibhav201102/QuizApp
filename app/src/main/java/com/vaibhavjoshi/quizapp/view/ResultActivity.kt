@@ -1,16 +1,13 @@
-package com.example.quizapp
+package com.vaibhavjoshi.quizapp.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.quizapp.databinding.ActivityQuizBinding
-import com.example.quizapp.databinding.ActivityResultBinding
+import com.vaibhavjoshi.quizapp.R
+import com.vaibhavjoshi.quizapp.databinding.ActivityResultBinding
 
 @SuppressLint("SetTextI18n")
 class ResultActivity : AppCompatActivity() {

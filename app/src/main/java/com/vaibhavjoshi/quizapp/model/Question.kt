@@ -1,4 +1,4 @@
-package com.example.quizapp
+package com.vaibhavjoshi.quizapp.model
 
 // Question class
 data class Question(

@@ -1,9 +1,8 @@
-package com.example.quizapp
+package com.vaibhavjoshi.quizapp.view
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.database.Cursor
-import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
@@ -12,7 +11,10 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
-import com.example.quizapp.databinding.ActivityQuizBinding
+import com.vaibhavjoshi.quizapp.R
+import com.vaibhavjoshi.quizapp.databinding.ActivityQuizBinding
+import com.vaibhavjoshi.quizapp.db.QuizDatabaseHelper
+import com.vaibhavjoshi.quizapp.model.Question
 
 @SuppressLint("Range","SetTextI18n")
 class QuizActivity : AppCompatActivity() {

@@ -13,15 +13,15 @@
         android:configChanges="keyboardHidden|orientation|screenSize"
         android:theme="@style/Theme.QuizApp">
         <activity
-            android:name=".ResultActivity"
+            android:name=".view.ResultActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="false" />
         <activity
-            android:name=".QuizActivity"
+            android:name=".view.QuizActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true">
             <intent-filter>
