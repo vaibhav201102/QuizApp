@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".view.ResultActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -46,6 +47,7 @@
                     android:layout_marginTop="32dp"
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
+                    android:textAlignment="center"
                     android:text="@string/result_msg"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -75,9 +77,11 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnPlayAgain"
+                android:soundEffectsEnabled="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/style_btn_corner"
                 android:backgroundTint="@android:color/holo_blue_light"
                 android:padding="16dp"

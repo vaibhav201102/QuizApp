@@ -8,6 +8,7 @@ import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
+import android.view.SoundEffectConstants
 import android.widget.Button
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -41,7 +42,10 @@ class QuizActivity : AppCompatActivity() {
         _binding = ActivityQuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
+        binding.btnOption1.playSoundEffect(SoundEffectConstants.CLICK)
+        binding.btnOption2.playSoundEffect(SoundEffectConstants.CLICK)
+        binding.btnOption3.playSoundEffect(SoundEffectConstants.CLICK)
+        
         loadQuestions()
     }
 
@@ -62,6 +66,9 @@ class QuizActivity : AppCompatActivity() {
 
     // Show the next question
     private fun showNextQuestion() {
+        binding.btnOption1.isClickable = true
+        binding.btnOption2.isClickable = true
+        binding.btnOption3.isClickable = true
         if (questionIndex < questions.size) {
             val currentQuestion = questions[questionIndex]
             binding.tvQuestion.text = currentQuestion.question
@@ -97,6 +104,9 @@ class QuizActivity : AppCompatActivity() {
 
     // Check the selected option and update the UI
     private fun checkAnswer(selectedOption: String, correctAnswer: String, selectedButton: Button) {
+        binding.btnOption1.isClickable = false
+        binding.btnOption2.isClickable = false
+        binding.btnOption3.isClickable = false
         timer?.cancel()
         if (selectedOption == correctAnswer) {
             correctAnswersCount++
@@ -113,7 +123,7 @@ class QuizActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             questionIndex++
             showNextQuestion()
-        }, 200)
+        }, 2000)
     }
 
     // Highlight the correct answer
