@@ -117,6 +117,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnOption1"
+                    android:soundEffectsEnabled="true"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -133,6 +134,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnOption2"
+                    android:soundEffectsEnabled="true"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -149,6 +151,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnOption3"
+                    android:soundEffectsEnabled="true"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
