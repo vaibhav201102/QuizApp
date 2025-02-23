@@ -7,7 +7,9 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Button
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
@@ -15,6 +17,8 @@ import com.vaibhavjoshi.quizapp.R
 import com.vaibhavjoshi.quizapp.databinding.ActivityQuizBinding
 import com.vaibhavjoshi.quizapp.db.QuizDatabaseHelper
 import com.vaibhavjoshi.quizapp.model.Question
+import com.vaibhavjoshi.quizapp.model.Questions
+import com.vaibhavjoshi.quizapp.viewmodel.QuestionViewModel
 
 @SuppressLint("Range","SetTextI18n")
 class QuizActivity : AppCompatActivity() {
@@ -22,14 +26,14 @@ class QuizActivity : AppCompatActivity() {
     // Variables
     private var _binding: ActivityQuizBinding? = null
     private val binding get() = _binding!!
-    private lateinit var dbHelper: QuizDatabaseHelper
-    private lateinit var cursor: Cursor
     private var score = 0
     private var questionIndex = 0
-    private val questions = mutableListOf<Question>()
+    private val questions = mutableListOf<Questions>()
     private var timer: CountDownTimer? = null
     private var correctAnswersCount = 0
     private var timerTime = 20
+
+    private val questionViewModel: QuestionViewModel by viewModels()
 
     // On Create Method
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,27 +42,22 @@ class QuizActivity : AppCompatActivity() {
         setContentView(binding.root)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        dbHelper = QuizDatabaseHelper(this)
         loadQuestions()
-        showNextQuestion()
     }
 
-    // Load questions from the database
-    private fun loadQuestions() {
-        val db = dbHelper.readableDatabase
-        cursor = db.rawQuery("SELECT * FROM ${QuizDatabaseHelper.TABLE_NAME} ORDER BY RANDOM() LIMIT 10", null)
-        if (cursor.moveToFirst()) {
-            do {
-                val question = cursor.getString(cursor.getColumnIndex(QuizDatabaseHelper.COLUMN_QUESTION))
-                val option1 = cursor.getString(cursor.getColumnIndex(QuizDatabaseHelper.COLUMN_OPTION1))
-                val option2 = cursor.getString(cursor.getColumnIndex(QuizDatabaseHelper.COLUMN_OPTION2))
-                val option3 = cursor.getString(cursor.getColumnIndex(QuizDatabaseHelper.COLUMN_OPTION3))
-                val option4 = cursor.getString(cursor.getColumnIndex(QuizDatabaseHelper.COLUMN_OPTION4))
-                val answer = cursor.getString(cursor.getColumnIndex(QuizDatabaseHelper.COLUMN_ANSWER))
-                questions.add(Question(question, option1, option2, option3, option4, answer))
-            } while (cursor.moveToNext())
+    private fun loadQuestions(){
+        questionViewModel.questions.observe(this) { list ->
+            if (list != null && list.isNotEmpty()) {
+                Log.d("UI", "Received ${list.size} questions")
+                questions.addAll(list)
+                showNextQuestion()
+            } else {
+                Log.d("UI", "Question list is empty")
+            }
         }
-        cursor.close()
+
+        // Fetch data after observer is set
+        questionViewModel.loadQuestions()
     }
 
     // Show the next question

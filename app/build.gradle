@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id 'com.google.devtools.ksp'
 }
 
 android {
@@ -48,5 +49,10 @@ dependencies {
     androidTestImplementation libs.androidx.espresso.core
 
     implementation 'androidx.sqlite:sqlite:2.4.0'
+
+    implementation "androidx.room:room-runtime:2.6.1"
+    implementation "androidx.room:room-ktx:2.6.1"
+    ksp "androidx.room:room-compiler:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 
 }
