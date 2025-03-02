@@ -1,8 +1,7 @@
-package com.vaibhavjoshi.quizapp.view
+package com.vaibhavjoshi.quizapp.view.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.database.Cursor
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
@@ -16,8 +15,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import com.vaibhavjoshi.quizapp.R
 import com.vaibhavjoshi.quizapp.databinding.ActivityQuizBinding
-import com.vaibhavjoshi.quizapp.db.QuizDatabaseHelper
-import com.vaibhavjoshi.quizapp.model.Question
 import com.vaibhavjoshi.quizapp.model.Questions
 import com.vaibhavjoshi.quizapp.viewmodel.QuestionViewModel
 

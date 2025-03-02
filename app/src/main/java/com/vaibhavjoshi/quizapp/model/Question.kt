@@ -39,3 +39,10 @@ data class Question(
         return (incorrectOptions + answer).shuffled()
     }
 }
+
+// Using Api Service
+data class ApiQuestion(
+    val question: String,
+    val correct_answer: String,
+    val incorrect_answers: List<String>
+)

@@ -11,4 +11,7 @@
     <string name="result_msg">Well played but you failed. All The Best for Next Game.</string>
     <string name="total_score">Total Score</string>
     <string name="play_again">Play Again</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="leaderboard">LEADERBOARD</string>
 </resources>

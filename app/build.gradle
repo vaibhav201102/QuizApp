@@ -1,19 +1,22 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin'
     id 'com.google.devtools.ksp'
+    id 'androidx.navigation.safeargs'
+
 }
 
 android {
     namespace 'com.vaibhavjoshi.quizapp'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.vaibhavjoshi.quizapp"
         minSdk 28
-        targetSdk 34
+        targetSdk 35
         versionCode 2
-        versionName "1.0.1"
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
     buildFeatures {
         buildConfig true
@@ -43,22 +46,86 @@ dependencies {
     implementation libs.androidx.appcompat
     implementation libs.material
     implementation libs.androidx.activity
+    androidTestImplementation libs.androidx.espresso.core
     implementation libs.androidx.constraintlayout
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
-    androidTestImplementation libs.androidx.espresso.core
 
     implementation 'androidx.sqlite:sqlite:2.4.0'
 
-    implementation "androidx.room:room-runtime:2.6.1"
-    implementation "androidx.room:room-ktx:2.6.1"
-    ksp "androidx.room:room-compiler:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
 
-    //GSON
-    implementation 'com.google.code.gson:gson:2.11.0'
+    // region joda Time and Work
+    implementation libs.androidx.work.runtime.ktx
 
-    //GLIDE
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation libs.joda.time
+    implementation libs.androidx.work.runtime
 
+    // endregion joda Time and Work
+
+    //region lifecycle dependencies
+
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.lifecycle.livedata.ktx
+
+    //endregion lifecycle dependencies
+
+    //region Dagger Hilt Dependency
+
+    implementation libs.hilt.android.v245
+    ksp libs.dagger.hilt.compiler
+    implementation libs.androidx.hilt.work.v100
+    // When using Kotlin.
+    ksp libs.androidx.hilt.compiler.v100
+    // When using Java.
+    annotationProcessor libs.hilt.compiler.v100
+    // Dagger - hilt
+    implementation libs.hilt.android.v245
+    ksp libs.dagger.hilt.compiler
+    implementation libs.androidx.hilt.navigation.compose
+
+    //endregion Dagger Hilt Dependency
+
+    // region Http Dependency
+
+    implementation libs.okhttp
+    implementation libs.logging.interceptor
+
+    // endregion Http Dependency
+
+    //region Coroutine Dependency
+
+    implementation libs.kotlinx.coroutines.core
+    implementation libs.kotlinx.coroutines.android
+
+    //endregion Coroutine Dependency
+
+    //region Retrofit Dependency
+
+    implementation libs.retrofit
+
+    //endregion Retrofit Dependency
+
+    //region GSON Dependency
+
+    implementation libs.converter.gson
+
+    //endregion GSON Dependency
+
+    //region Room Dependency
+
+    implementation libs.androidx.room.common
+    implementation libs.androidx.room.ktx
+
+    ksp libs.androidx.room.compiler
+
+    //endregion Room Dependency
+
+    //region GLIDE Dependency
+
+    implementation libs.glide
+    ksp libs.compiler
+
+    //endregion GLIDE Dependency
 }

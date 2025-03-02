@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_category_wise_quiz"
+    app:startDestination="@id/letsPlayFragment">
+
+    <fragment
+        android:id="@+id/letsPlayFragment"
+        android:name="com.vaibhavjoshi.quizapp.view.fragments.LetsPlayFragment"
+        android:label="fragment_lets_play"
+        tools:layout="@layout/fragment_lets_play" />
+    <fragment
+        android:id="@+id/selectCategoryFragment"
+        android:name="com.vaibhavjoshi.quizapp.view.fragments.SelectCategoryFragment"
+        android:label="fragment_select_category"
+        tools:layout="@layout/fragment_select_category" />
+    <fragment
+        android:id="@+id/selectDifficultyFragment"
+        android:name="com.vaibhavjoshi.quizapp.view.fragments.SelectDifficultyFragment"
+        android:label="fragment_select_difficulty"
+        tools:layout="@layout/fragment_select_difficulty" />
+    <fragment
+        android:id="@+id/selectTypeFragment"
+        android:name="com.vaibhavjoshi.quizapp.view.fragments.SelectTypeFragment"
+        android:label="fragment_select_type"
+        tools:layout="@layout/fragment_select_type" />
+    <fragment
+        android:id="@+id/playGroundFragment"
+        android:name="com.vaibhavjoshi.quizapp.view.fragments.PlayGroundFragment"
+        android:label="fragment_play_ground"
+        tools:layout="@layout/fragment_play_ground" />
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.vaibhavjoshi.quizapp.view.fragments.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" />
+</navigation>

@@ -1,4 +1,4 @@
-package com.vaibhavjoshi.quizapp.view
+package com.vaibhavjoshi.quizapp.view.activities
 
 import android.content.Intent
 import android.os.Bundle
