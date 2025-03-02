@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     private fun buttonPlayGame(){
         binding.btnPlayGame.setOnClickListener {
             startActivity(Intent(this, QuizActivity::class.java))
+//            startActivity(Intent(this, FlagQuizActivity::class.java))
         }
     }
 
