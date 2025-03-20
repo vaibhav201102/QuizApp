@@ -3,14 +3,9 @@ package com.vaibhavjoshi.quizapp.view.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.vaibhavjoshi.quizapp.R
-import com.vaibhavjoshi.quizapp.databinding.LayoutGameSelectItemBinding
 import com.vaibhavjoshi.quizapp.databinding.LayoutOptionsBinding
-import java.util.Locale
 
 @SuppressLint("NotifyDataSetChanged")
 class SelectOptionsAdapter: RecyclerView.Adapter<SelectOptionsAdapter.ViewHolder>() {

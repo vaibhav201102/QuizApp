@@ -5,7 +5,6 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.vaibhavjoshi.quizapp.R
 import com.vaibhavjoshi.quizapp.dao.QuestionDao
 import com.vaibhavjoshi.quizapp.model.Questions
 import com.vaibhavjoshi.quizapp.utils.ListOfQuestions

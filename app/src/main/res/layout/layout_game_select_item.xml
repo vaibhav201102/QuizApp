@@ -2,9 +2,8 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     app:strokeWidth="@dimen/dp_3"
-    app:strokeColor="@color/blue_dark"
+    app:strokeColor="@color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
@@ -12,7 +11,7 @@
     android:elevation="@dimen/dp_20">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/bg_gredient"
+        android:background="@drawable/bg_item_gredient"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -24,7 +23,9 @@
             android:id="@+id/item_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/circle_background"
+            app:strokeColor="@color/white"
+            app:strokeWidth="@dimen/dp_2"
+            app:shapeAppearanceOverlay="@style/circlefullImageView"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

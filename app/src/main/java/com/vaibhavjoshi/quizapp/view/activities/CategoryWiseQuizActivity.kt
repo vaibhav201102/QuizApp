@@ -1,32 +1,20 @@
 package com.vaibhavjoshi.quizapp.view.activities
 
-import android.Manifest
-import android.annotation.SuppressLint
-import android.content.Context
-import android.content.pm.PackageManager
 import android.graphics.Typeface
-import android.os.Build
 import android.os.Bundle
 import android.view.Gravity
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toolbar
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.AppCompatImageButton
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.vaibhavjoshi.quizapp.R
 import com.vaibhavjoshi.quizapp.databinding.ActivityCategoryWiseQuizBinding
-import com.vaibhavjoshi.quizapp.databinding.ActivityMainBinding
-import com.vaibhavjoshi.quizapp.utils.DialogHelper.showPermissionDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -208,7 +196,7 @@ class CategoryWiseQuizActivity : AppCompatActivity() {
             text = leftButtonText
             textSize = 18F
             typeface = Typeface.DEFAULT_BOLD
-            setTextColor(ContextCompat.getColorStateList(this@CategoryWiseQuizActivity, R.color.blue_dark))
+            setTextColor(ContextCompat.getColorStateList(this@CategoryWiseQuizActivity, R.color.blue))
             layoutParams = LinearLayout.LayoutParams(
                 0, LinearLayout.LayoutParams.WRAP_CONTENT, 1F
             )

@@ -1,19 +1,16 @@
 package com.vaibhavjoshi.quizapp.view.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.vaibhavjoshi.quizapp.R
 import com.vaibhavjoshi.quizapp.databinding.FragmentLetsPlayBinding
-import com.vaibhavjoshi.quizapp.model.ApiQuestion
-import com.vaibhavjoshi.quizapp.model.ApiResponse
-import com.vaibhavjoshi.quizapp.utils.AppHelper
 import com.vaibhavjoshi.quizapp.view.activities.CategoryWiseQuizActivity
 import com.vaibhavjoshi.quizapp.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint

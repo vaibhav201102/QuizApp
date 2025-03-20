@@ -1,43 +1,28 @@
 package com.vaibhavjoshi.quizapp.view.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.Switch
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.viewModels
-import androidx.compose.ui.text.toLowerCase
-import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vaibhavjoshi.quizapp.R
 import com.vaibhavjoshi.quizapp.databinding.FragmentPlayGroundBinding
-import com.vaibhavjoshi.quizapp.databinding.FragmentSelectTypeBinding
 import com.vaibhavjoshi.quizapp.model.ApiQuestion
 import com.vaibhavjoshi.quizapp.model.ApiResponse
-import com.vaibhavjoshi.quizapp.model.Questions
 import com.vaibhavjoshi.quizapp.utils.AppHelper
 import com.vaibhavjoshi.quizapp.view.activities.CategoryWiseQuizActivity
-import com.vaibhavjoshi.quizapp.view.activities.ResultActivity
-import com.vaibhavjoshi.quizapp.view.adapter.SelectGameAdapter
 import com.vaibhavjoshi.quizapp.view.adapter.SelectOptionsAdapter
-import com.vaibhavjoshi.quizapp.viewmodel.QuestionViewModel
 import com.vaibhavjoshi.quizapp.viewmodel.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import org.json.JSONObject
 import java.util.Locale
 
 @AndroidEntryPoint

@@ -2,12 +2,12 @@ package com.vaibhavjoshi.quizapp.view.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.vaibhavjoshi.quizapp.R
@@ -52,7 +52,7 @@ class ResultFragment : Fragment() {
             appbarTitle = "",
             isVisible = false
         )
-        (requireActivity() as CategoryWiseQuizActivity).initActionbar("Result", isVisible = true)
+        (requireActivity() as CategoryWiseQuizActivity).initActionbar("Result", leftButton = 0, isVisible = true)
 
         playAgainButton()
         setResultMessage(score, correctAnswers)

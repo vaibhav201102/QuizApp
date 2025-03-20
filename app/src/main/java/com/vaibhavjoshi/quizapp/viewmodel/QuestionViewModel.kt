@@ -2,7 +2,6 @@ package com.vaibhavjoshi.quizapp.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.vaibhavjoshi.quizapp.db.QuestionRepository
